@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+    
+    <div class="header">
+        <h1 style="margin-right: 1200px; font-weight: bolder;" ><b></b>Sign Up</b></h1>
+    </div>
+    <div class="container">
+        <!-- <h2>Sign Up</h2> -->
+        <form action="your_server_endpoint_here" method="POST" id="signup">
+            <input type="text" name="first_name" id="firstName" placeholder="First Name" required>
+            <input type="text" name="last_name" id="lastName" placeholder="Last Name" required>
+            <input type="text" name="email" id="email" placeholder="email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="repeat_password" id="repeatpassword" placeholder="Repeat Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script>
+   const firebaseConfig = {
+apiKey: "AIzaSyAt7c5PMyTrXKX4edSfJq5Q4LBmpDl82hc",
+authDomain: "my-smit-project.firebaseapp.com",
+databaseURL: "https://my-smit-project-default-rtdb.firebaseio.com",
+projectId: "my-smit-project",
+storageBucket: "my-smit-project.appspot.com",
+messagingSenderId: "729333477503",
+appId: "1:729333477503:web:c597bd7f2ae3b0c3cfcf4a",
+measurementId: "G-4P5DVENZKC"
+};
+              const app = firebase.initializeApp(firebaseConfig);
+      
+              const contactForm = document.getElementById('signup');
+              contactForm.addEventListener('submit', async (event) => {
+                  event.preventDefault();
+      
+                  const username = document.getElementById('firstName').value;
+                  const contact = document.getElementById('lastName').value;
+                  const email = document.getElementById('email').value;
+                  const password = document.getElementById('password').value;
+                  const repeatpassword = document.getElementById('repeatpassword').value;
+
+                  try {
+                      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      
+                      // User creation successful, store additional data
+                      const user = userCredential.user;
+                      const usersRef = firebase.database().ref('users');
+                      usersRef.push({
+                          uid: user.uid,
+                          username: username,
+                          contact: contact,
+                          email: email,
+                          password: password
+                      });
+                      if (password !== repeatpassword) {
+    console.error('Passwords do not match');
+    return;
+  }
+                      const userObject = { email: email };
+                      sessionStorage.setItem('user', JSON.stringify(userObject));
+      
+                      console.log('User created successfully.');
+                      window.location.href = './login.html';
+                  } catch (error) {
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      console.error(errorCode + ': ' + errorMessage);
+                  }
+              });</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="header">
+        <h1><b>Login</b></h1>
+    </div>
+    <!-- <div class="login-container">
+        <h1 >Login</h1>
+        <form id="login-form" onsubmit="return validateLogin()">
+          <input type="email" placeholder="Email" id="email" required>
+          <input type="password" placeholder="Password" id="password" required>
+          <p class="error" id="loginError"></p>
+          <button type="submit">Login</button>
+        </form> -->
+        <div class="container">
+            <!-- <h2>Sign Up</h2> -->
+            <form action="your_server_endpoint_here" method="POST" id="signup">
+                <input type="text" name="first_name" id="email" required>
+                <input type="text" name="last_name"  id="password" required>
+                <input type="submit" value="login">
+                </form>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+      <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+  apiKey: "AIzaSyAt7c5PMyTrXKX4edSfJq5Q4LBmpDl82hc",
+  authDomain: "my-smit-project.firebaseapp.com",
+  databaseURL: "https://my-smit-project-default-rtdb.firebaseio.com",
+  projectId: "my-smit-project",
+  storageBucket: "my-smit-project.appspot.com",
+  messagingSenderId: "729333477503",
+  appId: "1:729333477503:web:c597bd7f2ae3b0c3cfcf4a",
+  measurementId: "G-4P5DVENZKC"
+};  
+const app = firebase.initializeApp(firebaseConfig);
+
+const signinForm = document.getElementById('signup');
+signinForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+
+        // Sign-in successful
+        const user = userCredential.user;
+        console.log('User signed in successfully.');
+
+        // Redirect to choose.html
+        window.location.href = './dashboard/dash.html';
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorCode + ': ' + errorMessage);
+
+        if (errorCode === 'auth/user-not-found') {
+            console.log('Email not registered. Please register.');
+        } else {
+            // Handle other sign-in errors if needed
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+       

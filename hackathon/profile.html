@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./profile.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Personal Blogging App</h1>
+    </div> <br>
+    <header class="dashboard-header">
+        <h1>profile</h1><br>
+        <div class="container">
+            <img src="./profile 1.png" alt="Profile Image">
+            <h1>Inzamam Malik</h1>
+            <h1>password</h1>
+            
+            <div class="password-form">
+                <input type="password"  id="old-password" placeholder="Old Password" >
+                <input type="password" id="new-password" placeholder="New Password">
+                <input type="password" id="repeat-password" placeholder="Repeat Password">
+                <button id="update-button">Update Password</button>
+            </div>
+        </div>
+        <script>
+            const firebaseConfig = {
+  apiKey: "AIzaSyAt7c5PMyTrXKX4edSfJq5Q4LBmpDl82hc",
+  authDomain: "my-smit-project.firebaseapp.com",
+  databaseURL: "https://my-smit-project-default-rtdb.firebaseio.com",
+  projectId: "my-smit-project",
+  storageBucket: "my-smit-project.appspot.com",
+  messagingSenderId: "729333477503",
+  appId: "1:729333477503:web:c597bd7f2ae3b0c3cfcf4a",
+  measurementId: "G-4P5DVENZKC"
+};
+            document.getElementById("update-button").addEventListener("click", function() {
+                // Get values from input fields
+                var oldPassword = document.getElementById("old-password").value;
+                var newPassword = document.getElementById("new-password").value;
+                var repeatPassword = document.getElementById("repeat-password").value;
+    
+                // Check if newPassword and repeatPassword match
+                if (newPassword === repeatPassword) {
+                    // You can perform further actions here, like sending the data to a server.
+                    // For now, let's just log the values to the console.
+                    console.log("Old Password: " + oldPassword);
+                    console.log("New Password: " + newPassword);
+                    console.log("Repeat Password: " + repeatPassword);
+                } else {
+                    alert("New Password and Repeat Password do not match.");
+                }
+            });
+        </script>
+        
+</body>
+</html>

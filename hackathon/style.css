@@ -1,0 +1,86 @@
+
+body {
+    background: #7749F8;
+}
+
+header {
+    background-color: #47108581;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 7px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-right: 20px;
+    font-size: 20px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+h1.Heading {
+    font-family: Inter;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 174px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    margin-top: 120px;
+    color: white;
+    margin-left: 100px;
+}
+
+h1.heading2 {
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 58px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    /* background: #FFFFFF; */
+    margin-left: 100px;
+    color: grey; 
+    padding: 2px;
+}
+/* .buttons {
+    margin-left: 100px;
+    margin-top: 20px; 
+    color: #fff;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    color: white;
+} */
+.buttons {
+    margin-left: 500px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: plum;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px; /* Add rounded corners */
+}
+
+.btn:hover {
+    background: #555; /* Change background color on hover */
+}

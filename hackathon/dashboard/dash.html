@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Personal Blogging App</h1>
+    </div> <br>
+    <header class="dashboard-header">
+        <h1>Dashboard</h1>
+    </header><br>
+    <div id="third-container">
+        <input type="text" id="blog-title" placeholder="placeholder" class="mt-2">
+        <input type="text"  id="blog-content" placeholder="what is in your mind" class="mt-5">
+        <button class="mt-3" id="publish-button">Publish blog</button>
+    </div>
+    <script>
+        const firebaseConfig = {
+  apiKey: "AIzaSyAt7c5PMyTrXKX4edSfJq5Q4LBmpDl82hc",
+  authDomain: "my-smit-project.firebaseapp.com",
+  databaseURL: "https://my-smit-project-default-rtdb.firebaseio.com",
+  projectId: "my-smit-project",
+  storageBucket: "my-smit-project.appspot.com",
+  messagingSenderId: "729333477503",
+  appId: "1:729333477503:web:c597bd7f2ae3b0c3cfcf4a",
+  measurementId: "G-4P5DVENZKC"
+};
+        document.getElementById("publish-button").addEventListener("click", function() {
+            // Get values from input fields
+            var title = document.getElementById("blog-title").value;
+            var content = document.getElementById("blog-content").value;
+
+            // Log the values to the console
+           document.write("Title: " + title);
+            document.write("Content: " + content);
+
+            // You can perform further actions here, like sending the data to a server or displaying it on the webpage.
+        });
+    </script>
+</body>
+</html>

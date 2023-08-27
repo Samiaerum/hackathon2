@@ -1,0 +1,80 @@
+.header {
+    background-color: #6a0dad; /* Purple background color */
+    color: white; /* Text color */
+    padding: 3px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the header title */
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 1000px;
+}
+.dashboard-header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle effect */
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333; /* Optional: Change the text color */
+    margin-left: 80px;
+    font-weight: bolder;
+}
+/* Apply styles to the container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 200px;
+}
+
+/* Style the profile image */
+.container img {
+    max-width: 150px;
+    /* border-radius: 50%; */
+    margin: 10px auto;
+    display: block;
+    margin-left: 50px;
+}
+
+/* Style the heading */
+.container h1 {
+    font-size: 24px;
+    margin-right: 150px;
+}
+
+/* Style the password form */
+.password-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Style the update button */
+#update-button {
+    background-color:plum;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#update-button:hover {
+    background-color:purple;
+}
